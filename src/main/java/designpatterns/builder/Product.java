@@ -4,13 +4,13 @@ import java.time.LocalDate;
 
 public class Product {
 
-    private final String id;
+    private final int id;
     private final String name;
     private final Category category;
     private final int rating;
     private final LocalDate createdDate;
 
-    private Product(String id, String name, Category category,
+    private Product(int id, String name, Category category,
                     int rating, LocalDate createdDate) {
         this.id = id;
         this.name = name;
@@ -19,20 +19,20 @@ public class Product {
         this.createdDate = createdDate;
     }
 
-    public String getId() { return id; }
+    public int getId() { return id; }
     public String getName() { return name; }
     public Category getCategory() { return category; }
     public int getRating() { return rating; }
     public LocalDate getCreatedDate() { return createdDate; }
 
     public static class Builder {
-        private String id;
+        private int id;
         private String name;
         private Category category;
         private int rating;
         private LocalDate createdDate;
 
-        public Builder id(String id) {
+        public Builder id(int id) {
             this.id = id;
             return this;
         }
