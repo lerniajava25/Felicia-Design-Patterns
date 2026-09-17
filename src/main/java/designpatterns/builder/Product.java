@@ -58,6 +58,9 @@ public class Product {
         }
 
         public Product build() {
+            if (id < 1) {
+                throw new IllegalStateException("Id must be 1 or higher");
+            }
             if (name == null || name.trim().isEmpty()) {
                 throw new IllegalStateException("Product name can't be empty");
             }
