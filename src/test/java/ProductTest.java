@@ -1,6 +1,7 @@
 import designpatterns.example.model.Category;
 import designpatterns.example.model.Product;
 
+import designpatterns.example.model.Sellable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ public class ProductTest {
         Product product = new Product.Builder()
                 .id(1)
                 .name("Gladiator")
+                .price(99.9)
                 .category(Category.MOVIE)
                 .rating(8)
                 .createdDate(created)
@@ -24,6 +26,7 @@ public class ProductTest {
 
         assertThat(product.getId()).isEqualTo(1);
         assertThat(product.getName()).isEqualTo("Gladiator");
+        assertThat(product.getPrice()).isEqualTo(99.9);
         assertThat(product.getCategory()).isEqualTo(Category.MOVIE);
         assertThat(product.getRating()).isEqualTo(8);
         assertThat(product.getCreatedDate()).isEqualTo(created);
