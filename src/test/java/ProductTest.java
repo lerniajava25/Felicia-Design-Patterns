@@ -1,5 +1,5 @@
-import designpatterns.builder.Category;
-import designpatterns.builder.Product;
+import designpatterns.example.model.Category;
+import designpatterns.example.model.Product;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
