@@ -1,4 +1,4 @@
-package designpatterns.builder;
+package designpatterns.example.model;
 
 public enum Category {
         MOVIE,

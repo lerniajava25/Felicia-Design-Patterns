@@ -1,33 +1,44 @@
-package designpatterns.builder;
-
+package designpatterns.example.model;
 import java.time.LocalDate;
 
-public class Product {
+public class Product implements Sellable {
 
     private final int id;
     private final String name;
+    private final double price;
     private final Category category;
     private final int rating;
     private final LocalDate createdDate;
 
-    private Product(int id, String name, Category category,
+    private Product(int id, String name, double price, Category category,
                     int rating, LocalDate createdDate) {
         this.id = id;
         this.name = name;
+        this.price = price;
         this.category = category;
         this.rating = rating;
         this.createdDate = createdDate;
     }
 
+    @Override
     public int getId() { return id; }
+
+    @Override
     public String getName() { return name; }
+
+    @Override
+    public double getPrice() { return price; }
+
+
     public Category getCategory() { return category; }
     public int getRating() { return rating; }
     public LocalDate getCreatedDate() { return createdDate; }
 
+    //Builder
     public static class Builder {
         private int id;
         private String name;
+        private double price;
         private Category category;
         private int rating;
         private LocalDate createdDate;
@@ -39,6 +50,11 @@ public class Product {
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder price(double price) {
+            this.price = price;
             return this;
         }
 
@@ -72,7 +88,7 @@ public class Product {
                 createdDate = LocalDate.now();
             }
 
-            return new Product(id, name, category, rating, createdDate);
+            return new Product(id, name, price, category, rating, createdDate);
         }
     }
 }
